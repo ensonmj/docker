@@ -4,9 +4,8 @@ MAINTAINER ensonmj <ensonmj@gmail.com>
 
 WORKDIR /root
 
-RUN apk update && \
-    apk add --no-cache --update bash && \
-    apk add --no-cache --update aria2
+RUN apk add --no-cache bash && \
+    apk add --no-cache aria2
 
 # user can add aria2.conf in /root/.aria2 to override this default conf
 COPY files/aria2.conf .config/aria2/aria2.conf
