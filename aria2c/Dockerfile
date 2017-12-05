@@ -12,8 +12,7 @@ COPY files/aria2.conf .config/aria2/aria2.conf
 COPY files/start.sh start.sh
 COPY files/on-complete.sh on-complete.sh
 
-ENV SECRET=""
-ENV EXTERNAL_IP=""
+ENV SECRET="" EXTERNAL_IP=""
 
 # 1) the folder to store downloadef files
 # 2) user should make their own session.dat file for persistence
