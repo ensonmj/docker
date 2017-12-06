@@ -10,10 +10,10 @@ fi
 
 # construct arguments
 arg=""
-if [ ! -d "${HOME}/Downloads/.dl" ]; then
-    mkdir -p "${HOME}/Downloads/.dl"
+if [ ! -d "${HOME}/Downloads/_dl" ]; then
+    mkdir -p "${HOME}/Downloads/_dl"
 fi
-arg="$arg -d ${HOME}/Downloads/.dl"
+arg="$arg -d ${HOME}/Downloads/_dl"
 
 if [ -n "${SECRET:+x}" ]; then
     arg="$arg --rpc-secret=${SECRET}"

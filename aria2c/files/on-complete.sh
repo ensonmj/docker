@@ -2,7 +2,7 @@
 
 if [ $2 -eq 1]; then
     mv "$3" "${HOME}/Downloads"
-    rm -rf "$3.aria2"
+    rm -rf "$3.{aria2,torrent,meta4,metalink}"
 fi
 
 echo [$(date)] $2, $3, $1 "<br>" >> "${HOME}/Downloads/log.html"
