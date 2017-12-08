@@ -15,11 +15,11 @@ if [ ! -d "${HOME}/Downloads/_dl" ]; then
 fi
 arg="$arg -d ${HOME}/Downloads/_dl"
 
-if [ -n "${SECRET:+x}" ]; then
+if [ -n "${SECRET:?'no valid secret'}" ]; then
     arg="$arg --rpc-secret=${SECRET}"
 fi
 
-if [ -n "${EXTERNAL_IP:+x}" ]; then
+if [ -n "${EXTERNAL_IP:?'no valid external ip'}" ]; then
     arg="$arg --bt-external-ip=${EXTERNAL_IP}"
 fi
 
