@@ -1,8 +1,17 @@
 #!/bin/sh
 
-if [ $2 -eq 1]; then
-    mv "$3" "${HOME}/Downloads"
-    rm -rf "$3.{aria2,torrent,meta4,metalink}"
+echo [$(date)] $2, $3, $1 "<br>" >> "${HOME}/Downloads/log.html"
+
+src=""
+if [ $2 -eq 1 ]; then
+    src="$3"
+elif [ $2 -gt 1 ]; then
+    dst="${HOME}/Downloads"
+    src="${3#$dst/_dl/}"
+    src="${src%%/*}"
 fi
 
-echo [$(date)] $2, $3, $1 "<br>" >> "${HOME}/Downloads/log.html"
+if [ "X${src}" != "X" ]; then
+    mv "${src}" "${HOME}/Downloads"
+    rm -rf "${src}.aria2"
+fi

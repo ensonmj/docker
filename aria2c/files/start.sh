@@ -23,5 +23,5 @@ if [ -n "${EXTERNAL_IP:+x}" ]; then
     arg="$arg --bt-external-ip=${EXTERNAL_IP}"
 fi
 
-echo "aria2c run with argments[$arg]"
-aria2c $arg
+echo "aria2c run with argments[${arg}]"
+aria2c ${arg}
