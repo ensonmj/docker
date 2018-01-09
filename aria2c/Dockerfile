@@ -4,7 +4,7 @@ MAINTAINER ensonmj <ensonmj@gmail.com>
 
 WORKDIR /root
 
-RUN apk add --no-cache aria2 \
+RUN apk add --no-cache aria2 && \
     apk add --no-cache tzdata
 
 # user can add aria2.conf in /root/.aria2 to override this default conf
